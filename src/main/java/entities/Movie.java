@@ -26,9 +26,9 @@ public class Movie implements Serializable {
     private int year;
     private String[] actors;
     
-//  If you don't like blobs    
-//  @ElementCollection
-//  private List<String> actors2;
+  //If you don't like blobs    
+//    @ElementCollection
+//    private List<String> actors2;
     
     public Movie(String title, int year, String[] actors) {
         this.title = title;

@@ -70,6 +70,13 @@ public class MovieFacade {
         return MovieDTO.getMovieDTOs(movies);
     }
     
+    public String getAllAsJson(){
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Movie> query = em.createQuery("SELECT m FROM Movie m", Movie.class);
+        List<Movie> movies = query.getResultList();
+        return MovieDTO.getMovieDTOsAsJSON(movies);
+    }
+    
     public MovieDTO getMovieById(long id){
         EntityManager em = emf.createEntityManager();
         Movie movie = em.find(Movie.class, id);

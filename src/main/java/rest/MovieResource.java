@@ -45,6 +45,14 @@ public class MovieResource {
         return GSON.toJson(movies);
     }
     
+    @Path("allv2")
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getAllV2() {
+        String json =  FACADE.getAllAsJson();
+        return json;
+    }
+    
     @Path("byid/{id}")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
